@@ -7,3 +7,5 @@ The defense works on the principle on adversarial machine learning that is to mo
 To Generate Adversarial Traces:python3 GenerateTraces.py
 
 To Test Adversary Model: python3 test.py
+
+Refer https://github.com/deep-fingerprinting/df for attacker model for closed and open world scenario.
