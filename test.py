@@ -11,6 +11,7 @@ from tensorflow.python.keras import Sequential
 import math
 import sys
 from scipy.optimize import differential_evolution
+
 # Training the DF model
 NB_EPOCH = 10   # Number of training epoch
 BATCH_SIZE = 128 # Batch size
@@ -63,9 +64,14 @@ def create_model():
     model = DFNet.build(input_shape=INPUT_SHAPE, classes=NB_CLASSES)
     model.compile(loss="categorical_crossentropy", optimizer=OPTIMIZER,metrics=["accuracy"])
     return model
+
 OPTIMIZER = Adamax(lr=0.002, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0) # Optimizer
+
+#Opening the Traces generated
 with open('/content/drive/My Drive/Adversarial_Traces_x_alpha30_only1.pkl', 'rb') as handle:
 	X_test = np.array(pickle.load(handle,encoding="bytes"))
+
+#Testing on DeepFingerprinting Attacker Model
 with open('/content/drive/My Drive/NoDef/X_test_NoDef.pkl', 'rb') as handle:
 	X_test1 = np.array(pickle.load(handle,encoding="bytes"))
 with open('/content/drive/My Drive/NoDef/y_test_NoDef.pkl', 'rb') as handle:
@@ -79,6 +85,7 @@ count=0
             break
 print(count)'''
 #print(len(X_test_old[0]))
+
 model=create_model()
 model.load_weights('/content/drive/My Drive/models/nodef_model_weights_attacker.h5')
 X_test1=[]
