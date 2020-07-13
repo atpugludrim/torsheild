@@ -8,7 +8,7 @@ from keras.utils import np_utils
 from keras.optimizers import Adamax
 from keras.models import load_model
 
-#Calculate Total Distance
+#Calculate Total Distance between source and target trace
 def calc_dist(source,target):
     prev=1
     curr=0
