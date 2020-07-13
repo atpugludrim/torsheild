@@ -9,3 +9,5 @@ To Generate Adversarial Traces:python3 GenerateTraces.py
 To Test Adversary Model on above generated traces: python3 test.py
 
 Refer https://github.com/deep-fingerprinting/df for attacker model for closed and open world scenario.
+
+Generated Adversarial Traces: https://drive.google.com/file/d/1fYRmqKUYZHaD__JVL-9lh90LOleeB-eR/view?usp=sharing
